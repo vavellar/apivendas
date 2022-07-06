@@ -1,5 +1,5 @@
 export * from './CreateProductService';
-export * from './DeleteProduct';
+export * from './DeleteProductService';
 export * from './ListAllProductsService';
 export * from './ShowProductService';
 export * from './UpdateProductService';
