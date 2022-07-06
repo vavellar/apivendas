@@ -13,6 +13,9 @@
     "noImplicitAny": true,
     "skipLibCheck": true,
     "baseUrl": "./",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
     "paths": {
       "@config/*": ["src/config/*"],
       "@modules/*": ["src/modules/*"],
