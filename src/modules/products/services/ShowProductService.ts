@@ -7,7 +7,7 @@ interface IRequest {
   id: string;
 }
 
-class ShowProductService {
+export class ShowProductService {
   public async execute({ id }: IRequest): Promise<Product> {
     const productRepository = getCustomRepository(ProductRepository);
 
@@ -18,5 +18,3 @@ class ShowProductService {
     return product;
   }
 }
-
-export default ShowProductService;

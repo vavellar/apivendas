@@ -1,9 +1,11 @@
 import { Request, Response } from 'express';
-import CreateProductService from '../services/CreateProductService';
-import DeleteProductService from '../services/DeleteProduct';
-import ListAllProductsService from '../services/ListAllProductsService';
-import ShowProductService from '../services/ShowProductService';
-import UpdateProductService from '../services/UpdateProductService';
+import {
+  CreateProductService,
+  DeleteProductService,
+  ListAllProductsService,
+  ShowProductService,
+  UpdateProductService,
+} from '../services';
 
 interface IProductsController {
   index(request: Request, response: Response): Promise<Response>;
