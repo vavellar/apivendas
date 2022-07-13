@@ -1,8 +1,8 @@
 {
-  "name": "tcc-backend",
+  "name": "apivendas",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:vavellar/tcc-backend.git",
+  "repository": "git@github.com:vavellar/apivendas.git",
   "author": "victorcandeias <victorcandeias@wine.com.br>",
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
