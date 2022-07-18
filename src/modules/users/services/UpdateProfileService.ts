@@ -29,8 +29,8 @@ export class UpdateProfileService {
 
     const userUpdateEmail = await usersRepository.findByEmail(email);
 
-    if (userUpdateEmail?.id !== user_id)
-      throw new AppError('There is already onde user with this email');
+    if (userUpdateEmail && userUpdateEmail.id !== user_id)
+      throw new AppError('There is already one user with this email');
 
     if (password && !old_password)
       throw new AppError('Old password is required');
