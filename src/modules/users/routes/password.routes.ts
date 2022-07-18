@@ -1,11 +1,12 @@
 import { Router } from 'express';
 import ForgotPasswordController from '../controllers/ForgotPasswordController';
-import LoginValidator from '../validators/LoginValidator';
+import ResetPasswordController from '../controllers/ResetPasswordController';
 import SendForgotEmailPasswordValidator from '../validators/SendForgotEmailPasswordValidator';
-import ResetPasswordValidator from '../validators/SendForgotEmailPasswordValidator';
+import ResetPasswordValidator from '../validators/ResetPasswordValidator';
 
 const passwordRouter = Router();
 const forgotPasswordController = new ForgotPasswordController();
+const resetPasswordController = new ResetPasswordController();
 
 passwordRouter.post(
   '/forgot',
@@ -13,10 +14,10 @@ passwordRouter.post(
   forgotPasswordController.create,
 );
 
-// passwordRouter.post(
-//   '/reset',
-//   ResetPasswordValidator.create()
-//   forgotPasswordController.create,
-// );
+passwordRouter.post(
+  '/reset',
+  ResetPasswordValidator.create(),
+  resetPasswordController.create,
+);
 
 export default passwordRouter;

@@ -29,6 +29,8 @@ export class ResetPasswordService {
     if (tokenExpired) throw new AppError('Token expired');
 
     user.password = await hash(password, 8);
+
+    await usersRepository.save(user);
   }
 
   private checkIfTokenIsValid(userToken: UserToken) {
