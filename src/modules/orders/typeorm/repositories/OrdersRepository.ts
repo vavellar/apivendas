@@ -1,10 +1,11 @@
-import Customer from '@modules/customers/typeorm/entities/Customer';
+import Customer from '../../../customers/typeorm/entities/Customer';
+import AppError from '@shared/errors/AppError';
 import { EntityRepository, Repository } from 'typeorm';
 import Order from '../entities/Order';
 
 interface IProduct {
   product_id: string;
-  name: string;
+  price: number;
   quantity: number;
 }
 
@@ -29,7 +30,11 @@ class OrdersRepository extends Repository<Order> {
       order_products: products,
     });
 
-    await this.save(order);
+    try {
+      await this.save(order);
+    } catch (e: any) {
+      throw new AppError(e);
+    }
 
     return order;
   }
